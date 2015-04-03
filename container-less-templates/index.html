@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Container-less Templates</title>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+	<style type="text/css">
+		section {
+			background: #bbb;
+			border-radius: 6px;
+			color: #4a4a4a;
+			margin: 20px;
+			padding: 20px;
+		}
+		section fieldset legend span + span {
+			float: right;
+		}
+		.hero-unit div:first-child {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="hero-unit">
+		<div>
+			<input data-bind="value: search, valueUpdate: 'afterkeydown'" />
+		</div>
+		<!-- ko foreach: filter -->
+		<section>
+			<fieldset>
+				<legend>
+					<span data-bind="text: title"></span>
+					<span data-bind="text: date"></span>
+				</legend>
+				<legend>
+					<label data-bind="text: openingGross"></label>
+					<details>
+						<summary>Cast</summary>
+						<!-- ko foreach: cast -->
+						<div data-bind="text: $data"></div>
+						<!-- /ko -->
+					</details>
+				</legend>
+			</fieldset>
+		</section>
+		<!-- /ko -->
+	</div>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js"></script>
+	<script src="script.js"></script>
+
+</body>
+</html>

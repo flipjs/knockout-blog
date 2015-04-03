@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Observables</title>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+	<style>
+		#map {
+			height: 300px;
+		}
+		#map img {
+			max-width: none;
+		}
+		select {
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="map"></div>
+
+	<div class="hero-unit">
+		<div data-bind="text: validationMessage, css: validationClass" class="alert"></div>
+	</div>
+
+	<div class="hero-unit">
+	    <input data-bind="value: placeToAdd" placeholder="Search" />
+	    <button data-bind="click: search" class="btn btn-primary">Add Marker</button>
+	    <button data-bind="click: deleteMarkers" class="btn btn-danger">Delete All</button>
+		<select data-bind="options: searchHistory, optionsText: 'place'"></select>
+	</div>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script src="script.js"></script>
+
+</body>
+</html>

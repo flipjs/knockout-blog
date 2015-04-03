@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Computed Observables</title>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="hero-unit">
+		<input data-bind="value: firstName" placeholder="First" />
+		<input data-bind="value: lastName" placeholder="Last" />
+		<p data-bind="visible: fullNameExists">
+			Full Name: <span data-bind="text: fullName"></span>
+		</p>
+	</div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js"></script>
+	<script src="script.js"></script>
+
+</body>
+</html>
